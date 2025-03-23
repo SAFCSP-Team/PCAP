@@ -20,10 +20,12 @@ print(next(gen))  # prints 3
 Example2: 
 ```python
 def fibonacci_generator(n):
-    a, b = 0, 1
+    a = 0
+    b = 1
     for _ in range(n):
         yield a
-        a, b = b, a + b
+        a = b
+        b =  a + b
 #call
 fib_gen = fibonacci_generator(5)
 for num in fib_gen:
