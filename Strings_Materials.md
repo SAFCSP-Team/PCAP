@@ -405,7 +405,7 @@ Example:
 print("alpha" < "alphabet")    # Output: True
 print("Ahmad" < "Ahlam")       # Output: False
 print("beta" > "Beta")         # Output: True
-print ("O" == " o ")           # Output: False
+print ("O" == " O ")           # Output: False
 print (10 != "10")             # Output: True
 
 string1 = "Apple"
