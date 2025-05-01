@@ -1,4 +1,4 @@
-# Strings Materials
+# Strings 
 
 ## 1. Understand the machine representation of characters
 
@@ -37,7 +37,7 @@
 #### **Escape Sequences**: 
 Special character representations in strings, starting with a backslash (`\`).
 
-Examples:
+ 
 
   - `\n` - Newline
   - `\t` - Tab
@@ -46,7 +46,7 @@ Examples:
   - `\"` - Double quote
   - `\uXXXX` - Unicode code point (e.g., `\u00A9` represents).
 
-Example:
+ 
 ```python
 # ASCII and Unicode representation
 print(ord('A'))  # Output: 65 (ASCII code point)
@@ -73,7 +73,7 @@ print("Unicode: \u0555")  # Output: Unicode: Օ
   - **Parameters**: An integer representing a Unicode code point.  
   - **Return Value**: The character corresponding to the code point.  
 
-Example:
+ 
 ```python
 word = 'by'
 print(len(word))  # Output: 2
@@ -99,15 +99,15 @@ print(chr(97))   # Output: a
   - **Parameters**: a string and an integer  
   - **Return Value**:  A new string created by the nth replication of the string.  
 
-Example:
+ 
 ```python
 print("Hello" + " World")  # Output: Hello World
 print("Hi" * 3)            # Output: HiHiHi
 ```
 
-```
-Note: Shortcut variants of the above operators are also applicable for strings (+= and *=).
-```
+> [!NOTE]
+> Shortcut variants of the above operators are also applicable for strings (+= and *=).
+
 
 ### Indexing, Slicing, and Immutability:
 - **Indexing**: Access individual characters in a string by specifying their position (index) that can be accessed using square brackets (`[]`).
@@ -116,7 +116,7 @@ Note: Shortcut variants of the above operators are also applicable for strings (
 - **Slicing**: Extract substrings using the syntax `string[start:end:step]`.
 - **Immutability**: Strings in Python are **immutable**, meaning that once a string is created, it cannot be modified. 
 
-Example:
+ 
 ```python
 word = "Python"
 # Indexing
@@ -140,7 +140,7 @@ word[0] = "J"  # Raises TypeError: 'str' object does not support item assignment
 ### Iterating Through Strings:
 - **For Loop**: Iterate through each character in a string.
 
-Example:
+ 
 ```python
 for char in "Hello":
     print(char)
@@ -160,7 +160,7 @@ o
 **Parameters**: A substring and a string.  
 **Return Value**: Boolean (`True` or `False`).  
 
-Example:
+ 
 ```python
 sentence = "Welcome to Python"
 print("Welcome" in sentence)      # Output: True
@@ -177,7 +177,7 @@ print("Python" not in sentence)   # Output: False
 - Compares characters based on their Unicode values.
 - Works on non-empty strings; calling it on an empty string raises a ValueError.
 
-Example:
+ 
 ```python
 print(min("Python"))  # Output: P
 # Unicode value of 'P' is smaller than other characters
@@ -188,7 +188,7 @@ print(min("Python"))  # Output: P
 - Compares characters based on their Unicode values.
 - Works on non-empty strings; calling it on an empty string raises a ValueError.
 
-Example:
+ 
 ```python
 print(max("Python"))  # Output: y
 # Unicode value of 'y' is the largest.
@@ -201,7 +201,7 @@ print(max("Python"))  # Output: y
   - end (optional): The ending position for the search.
 - **Return Value**: The index (integer) of the first occurrence of the substring.  
 
-Example:
+ 
 ```python
 string = "Python Programming language"
 print(string.index("P"))            # Output: 0  (first 'P' is at index 0)
@@ -216,7 +216,7 @@ print(string.index("z"))  # ValueError: substring not found
 - Converts a string into a list of its characters.
 - Each character in the string becomes an element in the list, including whitespace and special characters.
 
-Example:
+ 
 ```python
 char_list = list("Python")
 print(char_list)  # Output: ['P', 'y', 't', 'h', 'o', 'n']
@@ -233,7 +233,7 @@ print(list_numbers)  # Output: ['1', '2', '3', ' ', '4', '5', '6']
   - end (optional): The ending position for the search.
 - **Return Value**: Returns the number of occurrences of a specified substring or character in a string.
 
-Example:
+ 
 ```python
 string = "Python Programming language"
 print(string.count("g"))
@@ -253,7 +253,7 @@ Examples:
 - **`isalnum()`**: Returns True if all characters are alphanumeric (letters and digits).
 - **`isspace()`**: Returns True if all characters are whitespace.
   
-Example:
+ 
 ```python
 print("Hello".isalpha())  # Output: True
 print("123".isdigit())    # Output: True
@@ -267,7 +267,7 @@ print("   ".isspace())    # Output: True
 - **Parameters**: An iterable of strings (e.g., a list, tuple, etc.).  
 - **Return Value**: A single string concatenated with the specified delimiter.  
 - All the list's elements will be joined into one string, and the string from which the method has been invoked is used as a separator, put between the strings.
-Example:
+ 
 ```python
 words = ["Python", "is", "fun"]
 print(" ".join(words))  # Output: Python is fun
@@ -277,11 +277,13 @@ print(",".join(words))  # Output: Python,is,fun
 #### `split()`
 - **Parameters**: A delimiter string (optional). The default is whitespace.  
 - **Return Value**: A list of substrings.
-  ```
-  Note : The method assumes that the substrings are delimited by whitespaces - the spaces don't take part in the operation, and aren't copied into the resulting list.
-  ```
+
+
+> [!NOTE]
+> The method assumes that the substrings are delimited by whitespaces - the spaces don't take part in the operation, and aren't copied into the resulting list.
+
   
-Example:
+ 
 ```python
 sentence = "Python is fun"
 print(sentence.split())  # Output: ['Python', 'is', 'fun']
@@ -292,7 +294,7 @@ print("Python , is fun".split(","))  # Output: ['Python ', ' is fun']
 - **Parameters**: Width (integer), optional fill character (string, default is space).  
 - **Return Value**: A new string centered within the specified width.
 
-Example:
+ 
 ```python
 word = "Hello"
 print(word.center(10))  # Output: "  Hello   "
@@ -309,7 +311,7 @@ Is similar to index(), it looks for a substring and returns the index of first o
   - **Parameters**: Substring, optional start and end indices.  
   - **Return Value**: The index of the **last** occurrence of the substring, or `-1` if not found.  
 
-Example:
+ 
 ```python
 sentence = "Python Programming language"
 print(sentence.find("o"))    # Output: 4 (first occurrence)
@@ -327,7 +329,7 @@ print(sentence.rfind("o"))   # Output: 9 (last occurrence)
   - **Parameters:** A suffix string (can also accept a tuple of suffixes).
   - **Return Value:** Boolean (True or False), indicating if the string ends with the specified suffix.
 
-Example:
+ 
 
 ```python
 filename = "main.py"
@@ -348,7 +350,7 @@ print(filename.endswith("y"))       # Output: True
   - **Parameters**: None.  
   - **Return Value**: None (modifies the list in-place).  
 
-Example:
+ 
 ```python
 words = ["banana", "apple", "cherry"]
 sorted_function = sorted(words) 
@@ -375,7 +377,7 @@ print(words)                # Output: ['apple', 'banana', 'cherry']
 - **`title()`**: Capitalizes the first character of each word in the string, turning all other ones to lower-case.
 - **`swapcase()`**: Swaps case; converts lowercase to uppercase and vice versa.
 
-Example:
+ 
 ```python
 text = "  Hello World!  "
 print(text.strip())                       # Output: "Hello World!"
@@ -389,7 +391,7 @@ print("hello World".capitalize())         # Output: "Hello world"
 print("hello world".title())              # Output: "Hello World"
 print("Hello World".swapcase())           # Output: "hELLO wORLD"
 ```
-### For more information and additional methods, [click here](https://docs.python.org/3.4/library/stdtypes.html#string-methods).
+#### For more information and additional methods, [click here](https://docs.python.org/3.4/library/stdtypes.html#string-methods).
 
 ## 4. Comparing Strings
 Two strings are equal when they consist of the same characters in the same order.
@@ -400,7 +402,7 @@ Key point for comparing strings:
 - String comparison is always case-sensitive (upper-case letters are taken as smaller than lower-case).
 - Even if a string contains digits only, it's still not a number.
 
-Example:
+ 
 ```python
 print("alpha" < "alphabet")    # Output: True
 print("Ahmad" < "Ahlam")       # Output: False
