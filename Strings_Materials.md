@@ -172,7 +172,7 @@ print("Python" not in sentence)   # Output: False
 
 ## 3. Employ built-in string methods
 
-#### `min()`: 
+### `min()`: 
 - Returns the smallest (minimum) character in a string based on its Unicode value.
 - Compares characters based on their Unicode values.
 - Works on non-empty strings; calling it on an empty string raises a ValueError.
@@ -183,7 +183,7 @@ print(min("Python"))  # Output: P
 # Unicode value of 'P' is smaller than other characters
 ```
 
-#### `max()`: 
+### `max()`: 
 - Returns the largest (maximum) character in a string based on its Unicode value.
 - Compares characters based on their Unicode values.
 - Works on non-empty strings; calling it on an empty string raises a ValueError.
@@ -194,7 +194,7 @@ print(max("Python"))  # Output: y
 # Unicode value of 'y' is the largest.
 ```
 
-#### `index()`:
+### `index()`:
 - **Parameters**:
   - substring: The character or substring to search for.
   - start (optional): The starting position for the search.
@@ -212,7 +212,7 @@ print(string.index("g",16,-1))      # Output: 17 (first 'g'  in the range from i
 print(string.index("z"))  # ValueError: substring not found
 ```
 
-#### `list()`: 
+### `list()`: 
 - Converts a string into a list of its characters.
 - Each character in the string becomes an element in the list, including whitespace and special characters.
 
@@ -226,7 +226,7 @@ list_numbers = list(string)
 print(list_numbers)  # Output: ['1', '2', '3', ' ', '4', '5', '6']
 ```
 
-#### `count()`:
+### `count()`:
 - **Parameters**:
   - substring: The character or substring to count.
   - start (optional): The starting position for the search.
@@ -241,7 +241,7 @@ print(string.count("g",18,-1))
 print(string.count("Programming"))
 ```
 
-#### `isxxx()` Methods:
+### `isxxx()` Methods:
 - **Parameters**: None. Operates on the string itself.  
 - **Return Value**: Boolean (`True` or `False`).  
 
@@ -263,7 +263,7 @@ print("abc123".isalnum()) # Output: True
 print("   ".isspace())    # Output: True
 ```
 
-#### `join()`
+### `join()`
 - **Parameters**: An iterable of strings (e.g., a list, tuple, etc.).  
 - **Return Value**: A single string concatenated with the specified delimiter.  
 - All the list's elements will be joined into one string, and the string from which the method has been invoked is used as a separator, put between the strings.
@@ -274,7 +274,7 @@ print(" ".join(words))  # Output: Python is fun
 print(",".join(words))  # Output: Python,is,fun
 ```
 
-#### `split()`
+### `split()`
 - **Parameters**: A delimiter string (optional). The default is whitespace.  
 - **Return Value**: A list of substrings.
 
@@ -290,7 +290,7 @@ print(sentence.split())  # Output: ['Python', 'is', 'fun']
 print("Python , is fun".split(","))  # Output: ['Python ', ' is fun']
 ```
 
-#### `center()`
+### `center()`
 - **Parameters**: Width (integer), optional fill character (string, default is space).  
 - **Return Value**: A new string centered within the specified width.
 
@@ -301,7 +301,7 @@ print(word.center(10))  # Output: "  Hello   "
 print(word.center(10, '*'))  # Output: "**Hello***"
 ```
 
-#### `find()` and `rfind()`
+### `find()` and `rfind()`
 Is similar to index(), it looks for a substring and returns the index of first occurrence of this substring, but it doesn't generate an error for a non-existent substring it returns -1.
 - **`find()`**:  
   - **Parameters**: Substring, optional start and end indices.  
@@ -311,14 +311,13 @@ Is similar to index(), it looks for a substring and returns the index of first o
   - **Parameters**: Substring, optional start and end indices.  
   - **Return Value**: The index of the **last** occurrence of the substring, or `-1` if not found.  
 
- 
 ```python
 sentence = "Python Programming language"
 print(sentence.find("o"))    # Output: 4 (first occurrence)
 print(sentence.rfind("o"))   # Output: 9 (last occurrence)
 ```
 
-#### `startswith()` and `endswith()`
+### `startswith()` and `endswith()`
 - **`startswith()`**:
   - checks if a given string starts with the specified substring or character.
   - **Parameters**: A prefix string (can also accept a tuple of prefixes).
@@ -329,8 +328,6 @@ print(sentence.rfind("o"))   # Output: 9 (last occurrence)
   - **Parameters:** A suffix string (can also accept a tuple of suffixes).
   - **Return Value:** Boolean (True or False), indicating if the string ends with the specified suffix.
 
- 
-
 ```python
 filename = "main.py"
 print(filename.startswith("m"))     # Output: True
@@ -339,7 +336,7 @@ print(filename.endswith(".py"))     # Output: True
 print(filename.endswith("y"))       # Output: True
 ```
 
-#### `sorted()` and `sort()`
+### `sorted()` and `sort()`
 - **`sorted()`**:
    - The function takes one argument (iterable) and returns a new list filled with the sorted argument's elements. 
   - **Parameters**: Iterable.  
@@ -363,13 +360,34 @@ print(sort_function)        # Output: None
 print(words)                # Output: ['apple', 'banana', 'cherry']
 ```
 
-#### String Manipulation Methods
+#### Sorting Strings
+- `sort` is a method that sorts the elements of a list in place, modifying the original list directly. It can only be applied to list objects in Python.
+
+- `sorted` is a built-in function that takes an iterable object as an argument and returns a new sorted list without modifying the original object.
+
+- When sorting strings, `sort` cannot be used directly on a string object dbecause strings areimmutable. A string must be converted to a list of characters, sorted, and then joined back into a string.
+
+```Python
+# Sorting a string using split sort
+original_string = "c b a"
+string_list = original_string.split()
+string_list.sort()
+sorted_string = ' '.join(string_list)
+print(sorted_string)  # Output: 'a b c'
+
+# Sorting a string using the sorted 
+sorted_chars = ''.join(sorted(original_string))
+print(sorted_chars)  # Output: 'abc'
+```
+
+
+### String Manipulation Methods
 **The original string (from which the method is invoked) is not changed in any way; the modified  string is returned as a result.**
 
 - **`strip()`**: Removes leading and trailing whitespace from the string.
 - **`lstrip()`**: Removes leading whitespace (from the left).
-  - The one-parameter lstrip() method does the same as its parameterless version, but removes all characters listed in its argument (a string), not just whitespace:
-- **`rstrip()`**: Removes trailing whitespace (from the right). Do nearly the same as lstrips, but affect the opposite side of the string.
+  - The one-parameter lstrip() method does the same as its parameterless version, but removes all characters listed in its argument (a string), not just whitespace.
+- **`rstrip()`**: Removes trailing whitespace (from the right). Do nearly the same as `lstrips`, but affect the opposite side of the string.
 - **`replace(old, new)`**: Returns a new string where all occurrences of old are replaced with new.
 - **`lower()`**: Converts all characters in the string to lowercase.
 - **`upper()`**: Converts all characters in the string to uppercase.
