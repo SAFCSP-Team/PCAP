@@ -16,7 +16,7 @@ A package is simply a directory containing a special `__init__.py` file (which c
 **Key facts:**
 - Packages allow you to organize modules logically in subdirectories.
 - Sub-packages are just packages within packages.
-- Can be a directory sub-tree, or it can be packed inside a zip file.
+- A package can be a directory tree or even a zipped archive.
 
 
 ## How to Use Modules and Packages
@@ -236,7 +236,6 @@ print(version())
 print(python_implementation())
 print(python_version_tuple())
 ```
-
 
 
 ## Creating and Using User-defined Modules and Packages
