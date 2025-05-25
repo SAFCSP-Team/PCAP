@@ -309,4 +309,4 @@ project/
 ## Further Reading
 
 - [Python Modules Documentation](https://docs.python.org/3/tutorial/modules.html)
-- [Standard Python Modules]( https://docs.python.org/3/py-modindex.html.)
+- [Standard Python Modules]( https://docs.python.org/3/py-modindex.html)
